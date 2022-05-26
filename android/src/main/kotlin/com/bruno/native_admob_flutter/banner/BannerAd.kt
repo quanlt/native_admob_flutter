@@ -12,9 +12,9 @@ import io.flutter.plugin.platform.PlatformViewFactory
 
 class BannerAdViewFactory : PlatformViewFactory(StandardMessageCodec.INSTANCE) {
 
-    override fun create(context: Context, id: Int, args: Any?): PlatformView {
+    override fun create(context: Context?, id: Int, args: Any?): PlatformView {
         val creationParams = args as Map<String?, Any?>?
-        return BannerAdView(context, creationParams)
+        return BannerAdView(context!!, creationParams)
     }
 }
 
