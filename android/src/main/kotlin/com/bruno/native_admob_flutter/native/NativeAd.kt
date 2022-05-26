@@ -26,9 +26,9 @@ import io.flutter.plugin.platform.PlatformViewFactory
 
 class NativeViewFactory : PlatformViewFactory(StandardMessageCodec.INSTANCE) {
 
-    override fun create(context: Context, id: Int, args: Any?): PlatformView {
+    override fun create(context: Context?, id: Int, args: Any?): PlatformView {
         val creationParams = args as Map<String?, Any?>?
-        return NativeAdPlatformView(context, creationParams)
+        return NativeAdPlatformView(requireNotNull(context), creationParams)
     }
 
 }
